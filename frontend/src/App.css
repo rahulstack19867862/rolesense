@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CRITICAL: Disable all transitions on inputs globally */
+input,
+textarea,
+select,
+[type="text"],
+[type="email"],
+[type="password"],
+[type="number"],
+[type="tel"],
+[type="url"],
+[type="search"],
+[contenteditable="true"] {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+}
+
+/* Also target any child elements */
+input *,
+textarea *,
+select * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animation for loading spinner only */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Pipeline stage colors */
+.stage-new { background-color: #6B7280; }
+.stage-screening { background-color: #3B82F6; }
+.stage-interview { background-color: #8B5CF6; }
+.stage-assessment { background-color: #F59E0B; }
+.stage-offer { background-color: #10B981; }
+.stage-hired { background-color: #059669; }
+.stage-rejected { background-color: #EF4444; }
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
