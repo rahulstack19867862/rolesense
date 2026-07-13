@@ -240,15 +240,15 @@ const ScoreIndicator = ({ score, size = "md", showLabel = true }) => {
 };
 
 const Tabs = ({ tabs, activeTab, onChange }) => (
-  <div className="flex gap-1 bg-gray-100 p-1 rounded-lg">
+  <div className="flex gap-1.5 rounded-xl border border-slate-200 bg-slate-100/80 p-1.5 shadow-inner">
     {tabs.map(tab => (
       <button
         key={tab.id}
         onClick={() => onChange(tab.id)}
-        className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-          activeTab === tab.id 
-            ? "bg-white text-gray-900 shadow-sm" 
-            : "text-gray-600 hover:text-gray-900"
+        className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+          activeTab === tab.id
+            ? "bg-gradient-to-r from-indigo-600 to-slate-700 text-white shadow-sm"
+            : "text-slate-600 hover:bg-white hover:text-slate-900"
         }`}
       >
         {tab.label}
